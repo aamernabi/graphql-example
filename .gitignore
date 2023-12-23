@@ -37,9 +37,6 @@ Thumbs.db
 build/
 out/
 
-# Ignore TypeScript configuration file
-tsconfig.json
-
 # Ignore Node.js package manager lock file
 package-lock.json
 yarn.lock
