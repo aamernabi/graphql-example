@@ -1,0 +1,46 @@
+# Dependency directories
+node_modules/
+
+# TypeScript build directory
+dist/
+
+# Visual Studio Code directory
+.vscode/
+
+# Temporary files
+*.log
+*.log.*
+*.tmp
+*.bak
+*.swp
+*.out
+*.pid
+*.seed
+*.pid.lock
+*.log
+*.yarn-integrity
+
+# Environment variables file
+.env
+
+# Editor directories and files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Ignore build and config directory
+build/
+out/
+
+# Ignore TypeScript configuration file
+tsconfig.json
+
+# Ignore Node.js package manager lock file
+package-lock.json
+yarn.lock
+
