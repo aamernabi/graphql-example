@@ -7,6 +7,7 @@ const resolvers = {
   Query: {
     authors: () => authors,
     posts: () => posts,
+    post: (_, { id }) => posts.find((post) => post.id == id),
   },
 };
 
