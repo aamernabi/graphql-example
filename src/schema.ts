@@ -32,6 +32,8 @@ export const typeDefs = `#graphql
   type Query {
     authors: [Author]
     posts: [Post]
-    post(id: ID!): Post 
+    post(id: ID!): Post
+    author(id: ID!): Author
+    review(id: ID!): Review
   }
 `;

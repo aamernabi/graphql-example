@@ -36,7 +36,7 @@ export const posts = [
 
       The contest winner (at top) finds a common tiger beetle perched upon an acorn, its objective unknown, in a wooded area located a bit east of Ukraine’s capital city, Kyiv. Wiki Loves Earth’s contest judges commended photographer Serhii Miroshnyk for the technical skills required to capture the moment. One judge compared it to the award-winning 1996 documentary Microcosmos, known for its close portrayal of insect interactions.
     `,
-    author: authors[2],
+    authorId: 3,
     created: "Dec 20th 2023",
   },
   {
@@ -49,8 +49,8 @@ export const posts = [
 
       So back in the day, when that particular month and a day rolled around, I went out. And then I went out some more. And some more. And some more. Clubs. Bars. House parties. I’d flood myself with liquor, anything to dull the pain of remembering that she was gone.
     `,
-    author: authors[1],
-    reviews: reviews,
+    authorId: 2,
+    reviews: [102334, 102335],
     created: "Dec 23th 2023",
   },
 ];

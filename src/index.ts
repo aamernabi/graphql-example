@@ -1,15 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { authors, posts } from "./_db.js";
 import { typeDefs } from "./schema.js";
-
-const resolvers = {
-  Query: {
-    authors: () => authors,
-    posts: () => posts,
-    post: (_, { id }) => posts.find((post) => post.id == id),
-  },
-};
+import { resolvers } from "./resolvers.js";
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
