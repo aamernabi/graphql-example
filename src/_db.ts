@@ -54,3 +54,9 @@ export const posts = [
     created: "Dec 23th 2023",
   },
 ];
+
+export default {
+  authors,
+  posts,
+  reviews,
+};
