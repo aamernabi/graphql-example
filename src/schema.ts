@@ -1,10 +1,12 @@
+import gql from "graphql-tag";
+
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
 // your data.
 //
 // Adding #graphql to the beginning of a template literal provides GraphQL syntax highlighting in supporting IDEs.
 // (Make sure to install the required extensions). or we can use gql library
-export const typeDefs = `#graphql
+export const typeDefs = gql`
   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
 
   # This "Author" type defines the queryable fields for every author in our data source.
