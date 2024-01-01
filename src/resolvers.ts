@@ -17,4 +17,10 @@ export const resolvers: Resolvers = {
     reviews: ({ reviews }, _, { dataSources }) =>
       dataSources.db.reviews().filter((it) => reviews?.includes(it.id)),
   },
+  Mutation: {
+    createAuthor: (_, { name }, { dataSources }) =>
+      dataSources.db.createAuthor(name),
+    createPost: (_, { post }, { dataSources }) =>
+      dataSources.db.createPost(post),
+  },
 };

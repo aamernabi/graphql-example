@@ -38,4 +38,20 @@ export const typeDefs = gql`
     author(id: ID!): Author
     review(id: ID!): Review
   }
+
+  # The "Mutation" is type of operation that is used to modify the operation.
+  # Mutations allow clients to makes changes to data on server, such as creating,
+  # deleting, updating records.
+  type Mutation {
+    createPost(post: CreatePostInput!): Post
+    createAuthor(name: String!): Author
+  }
+
+  # "input" is special kind of type that is used to represent input values for a field.
+  # typically used for operations that involve creating or updating resouce
+  input CreatePostInput {
+    title: String!
+    content: String!
+    author: String!
+  }
 `;

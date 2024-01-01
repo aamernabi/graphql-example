@@ -24,6 +24,28 @@ export type Author = {
   name: Scalars['String']['output'];
 };
 
+export type CreatePostInput = {
+  author: Scalars['String']['input'];
+  content: Scalars['String']['input'];
+  title: Scalars['String']['input'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  createAuthor?: Maybe<Author>;
+  createPost?: Maybe<Post>;
+};
+
+
+export type MutationCreateAuthorArgs = {
+  name: Scalars['String']['input'];
+};
+
+
+export type MutationCreatePostArgs = {
+  post: CreatePostInput;
+};
+
 export type Post = {
   __typename?: 'Post';
   author: Author;
@@ -138,8 +160,10 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = {
   Author: ResolverTypeWrapper<AuthorModel>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
+  CreatePostInput: CreatePostInput;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
+  Mutation: ResolverTypeWrapper<{}>;
   Post: ResolverTypeWrapper<PostModel>;
   Query: ResolverTypeWrapper<{}>;
   Review: ResolverTypeWrapper<ReviewModel>;
@@ -150,8 +174,10 @@ export type ResolversTypes = {
 export type ResolversParentTypes = {
   Author: AuthorModel;
   Boolean: Scalars['Boolean']['output'];
+  CreatePostInput: CreatePostInput;
   ID: Scalars['ID']['output'];
   Int: Scalars['Int']['output'];
+  Mutation: {};
   Post: PostModel;
   Query: {};
   Review: ReviewModel;
@@ -162,6 +188,11 @@ export type AuthorResolvers<ContextType = DataSourceContext, ParentType extends 
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type MutationResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  createAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationCreateAuthorArgs, 'name'>>;
+  createPost?: Resolver<Maybe<ResolversTypes['Post']>, ParentType, ContextType, RequireFields<MutationCreatePostArgs, 'post'>>;
 };
 
 export type PostResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['Post'] = ResolversParentTypes['Post']> = {
@@ -191,6 +222,7 @@ export type ReviewResolvers<ContextType = DataSourceContext, ParentType extends 
 
 export type Resolvers<ContextType = DataSourceContext> = {
   Author?: AuthorResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   Post?: PostResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Review?: ReviewResolvers<ContextType>;
