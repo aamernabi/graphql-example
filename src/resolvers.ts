@@ -22,5 +22,8 @@ export const resolvers: Resolvers = {
       dataSources.db.createAuthor(name),
     createPost: (_, { post }, { dataSources }) =>
       dataSources.db.createPost(post),
+    deletePost: (_, { id }, { dataSources }) => dataSources.db.deletePost(id),
+    updatePost: (_, { id, post }, { dataSources }) =>
+      dataSources.db.updatePost(id, post),
   },
 };

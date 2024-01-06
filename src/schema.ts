@@ -45,6 +45,8 @@ export const typeDefs = gql`
   type Mutation {
     createPost(post: CreatePostInput!): Post
     createAuthor(name: String!): Author
+    updatePost(id: ID!, post: UpdatePostInput!): Post
+    deletePost(id: ID!): [Post]
   }
 
   # "input" is special kind of type that is used to represent input values for a field.
@@ -53,5 +55,10 @@ export const typeDefs = gql`
     title: String!
     content: String!
     author: String!
+  }
+  input UpdatePostInput {
+    title: String
+    content: String
+    author: String
   }
 `;

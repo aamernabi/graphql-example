@@ -1,5 +1,6 @@
+import { warn } from "console";
 import { PostModel, ReviewModel, AuthorModel } from "./models";
-import { CreatePostInput } from "./types";
+import { CreatePostInput, UpdatePostInput } from "./types";
 
 const authorsData: AuthorModel[] = [
   {
@@ -95,6 +96,27 @@ export class DB {
 
     postsData.push(newPost);
     return newPost;
+  }
+
+  updatePost(id: string, updatedPost: UpdatePostInput) {
+    const post = postsData.find((it) => it.id === id);
+    if (!post) {
+      return null;
+    }
+    const index = postsData.indexOf(post);
+    postsData[index] = { ...post, ...updatedPost };
+    return postsData[index];
+  }
+
+  deletePost(id: string) {
+    const post = postsData.find((it) => it.id === id);
+    if (!post) {
+      return postsData;
+    }
+
+    const index = postsData.indexOf(post);
+    postsData.splice(index, 1);
+    return postsData;
   }
 
   private formatCurrentDateInUTC() {
