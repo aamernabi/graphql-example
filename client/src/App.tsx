@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { gql } from "./__generated__";
+import { useQuery } from "@apollo/client";
+import PostList from "./components/post_list";
+import { Post } from "./__generated__/graphql";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export const GET_POSTS = gql(`
+  query PostsQuery {
+    posts {
+      id
+      title
+      content
+      author {
+        id
+        name
+      }
+      reviews {
+        rating
+        review
+      }
+      created
+    }
+  }
+
+`);
+
+const App = () => {
+  const { loading, error, data } = useQuery(GET_POSTS);
+
+  if (loading) return "Loading...";
+
+  if (error) return `Error! ${error.message}`;
+
+  const posts: Post[] = data?.posts ?? [];
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <h2 className="heading">Blog Posts</h2>
+      <div className="card-grid">
+        <PostList posts={posts} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
