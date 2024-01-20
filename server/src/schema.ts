@@ -13,6 +13,7 @@ export const typeDefs = gql`
   type Author {
     id: ID!
     name: String!
+    photo: String
   }
   type Review {
     id: ID!
@@ -25,6 +26,7 @@ export const typeDefs = gql`
     content: String!
     author: Author!
     reviews: [Review!]
+    image: String
     created: String
   }
 
@@ -61,4 +63,4 @@ export const typeDefs = gql`
     content: String
     author: String
   }
-`;
+`

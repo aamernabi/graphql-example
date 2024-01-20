@@ -1,4 +1,3 @@
-import { warn } from "console";
 import { PostModel, ReviewModel, AuthorModel } from "./models";
 import { CreatePostInput, UpdatePostInput } from "./types";
 

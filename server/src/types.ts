@@ -22,6 +22,7 @@ export type Author = {
   __typename?: 'Author';
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
+  photo?: Maybe<Scalars['String']['output']>;
 };
 
 export type CreatePostInput = {
@@ -65,6 +66,7 @@ export type Post = {
   content: Scalars['String']['output'];
   created?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
+  image?: Maybe<Scalars['String']['output']>;
   reviews?: Maybe<Array<Review>>;
   title: Scalars['String']['output'];
 };
@@ -208,6 +210,7 @@ export type ResolversParentTypes = {
 export type AuthorResolvers<ContextType = DataSourceContext, ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  photo?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -223,6 +226,7 @@ export type PostResolvers<ContextType = DataSourceContext, ParentType extends Re
   content?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   created?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   reviews?: Resolver<Maybe<Array<ResolversTypes['Review']>>, ParentType, ContextType>;
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
