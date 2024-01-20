@@ -5,6 +5,7 @@ import LinesEllipsis from "react-lines-ellipsis";
 import { ChipSet, Chip } from "@material/react-chips";
 import "@material/react-chips/dist/chips.css";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import { sanitize } from "../utils/dom-sanitizer";
 
 interface PostProps {
   post: PostModel;
@@ -25,7 +26,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       </ChipSet>
       <div style={{ height: 20 }} />
       <LinesEllipsis
-        text={content}
+        text={sanitize(content)}
         maxLine="3"
         ellipsis="... "
         trimRight
