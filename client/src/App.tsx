@@ -14,6 +14,7 @@ export const GET_POSTS = gql(`
       author {
         id
         name
+        photo
       }
       reviews {
         rating

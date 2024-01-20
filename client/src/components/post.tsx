@@ -21,7 +21,13 @@ const Post: React.FC<PostProps> = ({ post }) => {
         <Chip
           id={author.id}
           label={author.name}
-          leadingIcon={<AccountCircleRoundedIcon />}
+          leadingIcon={
+            author.photo ? (
+              <img src={author.photo ?? ""} />
+            ) : (
+              <AccountCircleRoundedIcon />
+            )
+          }
         />
       </ChipSet>
       <div style={{ height: 20 }} />
