@@ -16,6 +16,8 @@ export const resolvers: Resolvers = {
       dataSources.db.authors().find((it) => it.id === author),
     reviews: ({ reviews }, _, { dataSources }) =>
       dataSources.db.reviews().filter((it) => reviews?.includes(it.id)),
+    content: async ({ id }, _, { dataSources }) =>
+      await dataSources.db.getPostContent(id),
   },
   Mutation: {
     createAuthor: (_, { name }, { dataSources }) =>

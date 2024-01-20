@@ -1,0 +1,57 @@
+{
+  "authors": [
+    {
+      "id": "1",
+      "name": "Aamer Paul",
+      "photo": "https://i.pravatar.cc/256?img=12"
+    },
+    {
+      "id": "2",
+      "name": "Mathew Johnson"
+    },
+    {
+      "id": "3",
+      "name": "Mary Willson",
+      "photo": "https://i.pravatar.cc/256?img=10"
+    }
+  ],
+  "posts": [
+    {
+      "id": "101",
+      "title": "Birds, bugs, and beauty: The winners of Wiki Loves Earth 2023",
+      "content": "101",
+      "author": "3",
+      "reviews": [],
+      "created": "Dec 20th 2023"
+    },
+    {
+      "id": "102",
+      "title": "On Dealing with Grief Around the Holidays",
+      "content": "102",
+      "author": "2",
+      "reviews": ["102334", "102335"],
+      "created": "Dec 23th 2023",
+      "image": "https://uxdesign.cc/if-you-want-to-be-creative-you-cant-be-certain-a1d899e8b3f2"
+    },
+    {
+      "id": "103",
+      "title": "Stanley hype and Samba cringe: Why products fall in and out of style",
+      "content": "103",
+      "author": "1",
+      "reviews": [],
+      "created": "Jan 2nd 2024",
+      "image": "https://miro.medium.com/v2/resize:fit:3840/format:webp/1*cLczw913nHBiE4zpRn-QGA.png"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "102334",
+      "rating": 4,
+      "review": "Great job!"
+    },
+    {
+      "id": "102335",
+      "rating": 3
+    }
+  ]
+}
